@@ -45,10 +45,10 @@ socket.on('update', function(data) {
 /* 메시지 전송 함수 */
 function send() {
   // 입력되어있는 데이터 가져오기
-  var message = document.getElementById('test').value;
+  var message = document.getElementById('input_msg').value;
   
   // 가져왔으니 데이터 빈칸으로 변경
-  document.getElementById('test').value = '';
+  document.getElementById('input_msg').value = '';
 
   // 내가 전송할 메시지 클라이언트에게 표시
   var chat = document.getElementById('chat');
