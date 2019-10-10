@@ -2,6 +2,7 @@
 const express = require('express');
 const socket = require('socket.io');
 const http = require('http');
+const fs = require('fs');
 
 /* express 객체 생성 */
 const app = express();
@@ -12,11 +13,21 @@ const server = http.createServer(app);
 /* 생성된 서버를 socket.io에 바인딩 */
 const io = socket(server);
 
-/* Get 방식으로 접속하면 실행 */
+app.use('/css', express.static('./static/css'));
+app.use('/js', express.static('./static/js'));
+
+/* Get 방식으로 / 경로에 접속하면 실행 됨 */
 app.get('/', function(request, response) {
-    console.log('유저가 / 으로 접속하였습니다!');
-    response.send('Hello, Express Server!!');
-})
+  fs.readFile('./static/index.html', function(err, data) {
+    if(err) {
+      response.send('에러');
+    } else {
+      response.writeHead(200, {'Content-Type':'text/html'});
+      response.write(data);
+      response.end();
+    }
+  });
+});
 
 /* 서버를 3000 포트로 listen */
 server.listen(3000, function() {
