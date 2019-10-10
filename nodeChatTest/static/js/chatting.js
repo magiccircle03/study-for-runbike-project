@@ -12,7 +12,7 @@ socket.on('connect', function() {
 
   /* 서버에 새로운 유저가 왔다고 알림 */
   socket.emit('newUser', name);
-})
+});
 
 /* 서버로부터 데이터 받은 경우 */
 socket.on('update', function(data) {
@@ -40,7 +40,7 @@ socket.on('update', function(data) {
   message.classList.add(className);
   message.appendChild(node);
   chat.appendChild(message);
-})
+});
 
 /* 메시지 전송 함수 */
 function send() {
