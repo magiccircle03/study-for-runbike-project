@@ -1,0 +1,78 @@
+/* 메인 */
+#main {
+  margin: auto;
+  margin-top: 40px;
+  border-radius: 5px;
+  box-shadow: 5px 5px lightgray;
+  background-color: #efefef;
+  text-align: left;
+  width: 90%;
+  height: 650px;
+}
+
+/* 채팅 영역 */
+#chat {
+  height: 90%;
+  width: 100%;
+  overflow-y: auto;
+}
+
+/* 접속 알림 */
+.connect {
+  width: 90%;
+  margin: auto;
+  background-color: Aquamarine;
+  text-align: center;
+  margin-top: 10px;
+  padding: 5px;
+}
+
+/* 접속 종료 알림 */
+.disconnect {
+  width: 90%;
+  margin: auto;
+  background-color: #e0e0e0;
+  text-align: center;
+  margin-top: 10px;
+  padding: 5px;
+}
+
+/* 상대방이 보낸 메시지 */
+.other {
+  width: 45%;
+  margin-left: 5%;
+  background-color: #fefefe;
+  border-radius: 5px;
+  margin-top: 10px;
+} 
+
+/* 말풍선 감싸는 div */
+.balloon_me{
+	width: 90%;
+	margin: auto;
+	text-align: right;
+	margin-top: 10px;
+}
+
+.balloon_other{
+	width: 90%;
+	margin: auto;
+	margin-top: 10px;
+}
+
+.ballon_span{
+	background-color: #fefefe; 
+	border-radius: 5px;
+	display: inline-block;
+	padding: 5px;
+}
+
+/* 메시지 입력 부분 */
+#msgArea{
+	width: 90%;
+	margin: 0 auto;
+}
+#msg_process{
+	background-color: #fafafa;
+	width: 100%;
+}
