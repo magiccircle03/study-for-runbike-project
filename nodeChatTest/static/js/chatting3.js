@@ -14,13 +14,21 @@ socket.on('connect', function() {
   /* 이름을 입력받고 */
   var name = prompt('반갑습니다!', '');
 
+  /* 방번호 입력받고 */
+  var room_num = prompt('접속할 방 번호 입력', '');
+
   /* 이름이 빈칸인 경우 */
   if(!name) {
     name = '익명의 참새';
   }
 
-  /* 서버에 새로운 유저가 왔다고 알림 */
-  socket.emit('newUser', name);
+  /* 방번호 빈칸인 경우 */
+  if(!room_num) {
+    room_num = 0;
+  }
+
+  /* join */
+  socket.emit('join', {'name':name,'room_num':room_num});
 });
 
 /* 서버로부터 데이터 받은 경우 */
@@ -44,8 +52,8 @@ socket.on('update', function(data) {
       spanClassName = 'ballon_span';
       break;
 
-    case 'connect':
-      divClassName = 'connect';
+    case 'join':
+      divClassName = 'join';
       break;
 
     case 'disconnect':
